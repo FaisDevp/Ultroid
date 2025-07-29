@@ -7,15 +7,9 @@
 
 import os
 import sys
-import telethonpatch
 from .version import __version__
 
-# Ensure run_as_module is always defined and importable
 run_as_module = __package__ in sys.argv or sys.argv[0] == "-m"
-__all__ = ["run_as_module"]
-
-run_as_module = __package__ in sys.argv or sys.argv[0] == "-m"
-__all__ = ["run_as_module"]
 
 
 class ULTConfig:
@@ -25,6 +19,7 @@ class ULTConfig:
 
 if run_as_module:
     import time
+
     from .configs import Var
     from .startup import *
     from .startup._database import UltroidDB
